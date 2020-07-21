@@ -45,14 +45,24 @@
         </div>
         <div class="row justify-content-center">
           <button
-            onclick="onSignInSubmit()"
-            id="studentIdVerifyBth"
+            onclick="onProceed()"
+            id="studentIdVerifyBtn"
             class="btn btn-info"
             type="button"
             style="font-size: large; margin-top: 3vh;"
           >
             Proceed
           </button>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 2vh;">
+          <div
+            id="proceedSpinner"
+            class="spinner-border text-primary"
+            role="status"
+            style="display: none;"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
       </div>
 
@@ -61,7 +71,7 @@
         id="enterOTP"
         style="
           background-color: rgb(229, 255, 180);
-          height: 40vh;
+          height: 45vh;
           width: 80vw;
           margin-top: 3vh;
           border-radius: 3vh;
@@ -84,15 +94,16 @@
           </span>
         </div>
         <div class="row justify-content-center">
-          <input id="OTPString"
+          <input
+            id="OTPString"
             type="number"
             style="border-radius: 2vh; margin-top: 1vh; text-align: center;"
           />
         </div>
         <div class="row justify-content-center">
           <button
-          onclick="verifyOTP()"
-            id="OTPVerifyBth"
+            onclick="verifyOTP()"
+            id="OTPVerifyBtn"
             class="btn btn-success"
             type="button"
             style="font-size: large; margin-top: 3vh; font-weight: bold;"
@@ -100,21 +111,39 @@
             Verify
           </button>
         </div>
-      </div>
-      <div class="row justify-content-center" style="margin-top: 1vh;">
-        <button
-          disabled="true"
-          id="takeExam"
-          class="btn"
-          type="button"
-          style="background-color: coral; font-size: larger; display: none;"
-        >
-          Take Exam
-        </button>
+        <div class="row justify-content-center" style="margin-top: 2vh;">
+          <div
+            id="verifySpinner"
+            class="spinner-border text-primary"
+            role="status"
+            style="display: none;"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 1vh;">
+          <button
+            disabled
+            onclick="takeExam()"
+            id="takeExam"
+            class="btn"
+            type="button btn-secondary"
+            style="
+              background-color: coral;
+              font-size: larger;
+              display: none;
+              width: 30vw;
+              font-size: x-large;
+              font-weight: bolder;
+            "
+          >
+            Take Exam
+          </button>
+        </div>
       </div>
     </div>
 
-    <div id="questionPage" style="display: none;">
+    <div id="examPage" style="display: none;">
       <div class="container" id="topSection" style="padding-top: 4vh;">
         <div class="row">
           <div
@@ -322,12 +351,16 @@
       <div id="solutionPage"></div>
     </div>
     <div id="recaptcha"></div>
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="/__/firebase/7.16.1/firebase-app.js"></script>
-  <!-- Add Firebase products that you want to use -->
-  <script src="/__/firebase/7.16.1/firebase-auth.js"></script>
-   <!-- Initialize Firebase -->
-   <script src="/__/firebase/init.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/7.16.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/7.16.1/firebase-auth.js"></script>
+    <script src="/__/firebase/7.16.1/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="js/screenNavigation.js"></script>
     <script src="js/verfication.js"></script>
     <script src="js/timer.js"></script>
   </body>
