@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maths</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="row justify-content-center" style="width: 100vw;">
+      <span
+        class="badge badge-info"
+        style="font-size: xx-large; margin-top: 1vh; font-weight: bolder;"
+        >Maths</span
+      >
+    </div>
+    <div class="row justify-content-center" style="width: 100vw;">
+      <span
+      id="questionNumber"
+        class="badge badge-info"
+        style="font-size: xx-large; margin-top: 1vh; font-weight: bolder;"
+        ></span
+      >
+    </div>
+    <div
+    id="questionEntryPage"
+      class="container justify-content-center"
+      style="
+        margin-top: 5vh;
+        border-radius: 5px;
+        height: 70vh;
+        width: 90vw;
+        background-color: darkgray;
+        display: none;
+      "
+    >
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-1">
+          <span class="badge badge-primary">Question:</span>
+        </div>
+        <div class="col-11">
+          <span>&nbsp&nbsp</span>
+          <input
+            id="questionString"
+            type="text"
+            style="border-radius: 3px; width: 95%;"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-1">
+          <span class="badge badge-primary">Option 1:</span>
+        </div>
+        <div class="col-11">
+          <span>&nbsp&nbsp</span>
+          <input
+            id="opt1"
+            type="text"
+            style="border-radius: 3px; width: 60%;"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-1">
+          <span class="badge badge-primary">Option 2:</span>
+        </div>
+        <div class="col-11">
+          <span>&nbsp&nbsp</span>
+          <input
+            id="opt2"
+            type="text"
+            style="border-radius: 3px; width: 60%;"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-1">
+          <span class="badge badge-primary">Option 3:</span>
+        </div>
+        <div class="col-11">
+          <span>&nbsp&nbsp</span>
+          <input
+            id="opt3"
+            type="text"
+            style="border-radius: 3px; width: 60%;"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-1">
+          <span class="badge badge-primary">Option 4:</span>
+        </div>
+        <div class="col-11">
+          <span>&nbsp&nbsp</span>
+          <input
+            id="opt4"
+            type="text"
+            style="border-radius: 3px; width: 60%;"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="padding-top: 3vh; padding-left: 2vw; font-size: x-large;"
+      >
+        <div class="col-2">
+          <span class="badge badge-primary">Correct Option</span>
+        </div>
+        <div class="col-9 justify-content-right">
+          A <span>&nbsp</span>
+          <input
+            type="radio"
+            name="correctOption"
+            value="A"
+            style="transform: scale(2.5);"
+            
+          /><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span
+          ><span>&nbsp&nbsp</span> B <span>&nbsp</span>
+          <input
+            type="radio"
+            name="correctOption"
+            value="B"
+            style="transform: scale(2.5);"
+          /><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span
+          ><span>&nbsp&nbsp</span> C <span>&nbsp</span>
+          <input
+            type="radio"
+            name="correctOption"
+            value="C"
+            style="transform: scale(2.5);"
+          /><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span
+          ><span>&nbsp&nbsp</span> D <span>&nbsp</span>
+          <input
+            type="radio"
+            name="correctOption"
+            value="D"
+            style="transform: scale(2.5);"
+          /><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span><span>&nbsp&nbsp</span
+          ><span>&nbsp&nbsp</span>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-top: 3vh;">
+        <button
+          onclick="submitQuestion()"
+          class="btn btn-success"
+          style="font-size: xx-large; font-weight: bolder;"
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="row justify-content-center">
+        <div
+            id="submitSpinner"
+            class="spinner-border text-primary"
+            role="status"
+            style="display: none;
+            margin-top: 1vh;"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+      </div>
+    </div>
+    
+      <div class="row justify-content-center">
+        <div style="font-size: x-large; font-weight: bold;color: red;"id="completeAllFields"></div>
+      </div>
+      <script src="/__/firebase/7.16.1/firebase-app.js"></script>
+      <!-- Add Firebase products that you want to use -->
+      <script src="/__/firebase/7.16.1/firebase-auth.js"></script>
+      <script src="/__/firebase/7.16.1/firebase-firestore.js"></script>
+  
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+    <script src="maths.js"></script>
+  </body>
+</html>

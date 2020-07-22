@@ -7,13 +7,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Document</title>
+    <title>SNS-Exam</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   </head>
   <body>
     <div id="verificationPage" style="display: block;">
@@ -143,7 +145,7 @@
       </div>
     </div>
 
-    <div id="examPage" style="display: none;">
+    <div id="examPage" style="display: block;">
       <div class="container" id="topSection" style="padding-top: 4vh;">
         <div class="row">
           <div
@@ -218,7 +220,7 @@
         class="container"
         style="
           background-color: rgb(205, 246, 205);
-          width: 90vw;
+          width: 100%;
           border-radius: 7px;
           margin-top: 3vh;
 
@@ -246,7 +248,7 @@
           </div>
           <span class="freeSpace">&ensp;</span>
           <div style="display: inline;" id="mainQuestionString">
-            WHAT IS the si unit of temperature?fdfadsfajdhgaunfgabdsfiisa
+            WHAT IS \log \frac{\sin \theta }{\cos \theta }
           </div>
         </div>
 
@@ -254,13 +256,13 @@
           id="optionContainer"
           class="container"
           style="
-            width: 75vw;
-            font-size: larger;
+            width: 95vw;
+            font-size: large;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
               serif;
           "
         >
-          <div class="row" id="option1" style="margin-bottom: 1vh;">
+          <div id="option1" style="margin-bottom: 1vh;">
             <input
               type="radio"
               name="option"
@@ -268,10 +270,11 @@
               value="1"
               style="margin-top: 1.4vh; transform: scale(1.5);"
             />
-            <span class="freeSpace">&ensp;</span>
-            <div id="oprion1Val">adskfndafdjafdjafo</div>
+            <span id="option1Val" class="container">
+              oandeysudhan oandeysudhan oa sudhan oandey
+            </span>
           </div>
-          <div class="row" id="option1" style="margin-bottom: 1vh;">
+          <div id="option1" style="margin-bottom: 1vh;">
             <input
               type="radio"
               name="option"
@@ -279,10 +282,11 @@
               value="1"
               style="margin-top: 1.4vh; transform: scale(1.5);"
             />
-            <span class="freeSpace">&ensp;</span>
-            <div id="oprion1Val">adskfndafdjafdjafo</div>
+            <span id="option1Val" class="container">
+              oandeysudhan oandeysudhan oandeysudhan oandey
+            </span>
           </div>
-          <div class="row" id="option1" style="margin-bottom: 1vh;">
+          <div id="option1" style="margin-bottom: 1vh;">
             <input
               type="radio"
               name="option"
@@ -290,10 +294,11 @@
               value="1"
               style="margin-top: 1.4vh; transform: scale(1.5);"
             />
-            <span class="freeSpace">&ensp;</span>
-            <div id="oprion1Val">adskfndafdjafdjafo</div>
+            <span id="option1Val" class="container">
+              oandeysudhan oandeysudhan oandeysudhan oandey
+            </span>
           </div>
-          <div class="row" id="option1" style="margin-bottom: 1vh;">
+          <div id="option1" style="margin-bottom: 1vh;">
             <input
               type="radio"
               name="option"
@@ -301,8 +306,9 @@
               value="1"
               style="margin-top: 1.4vh; transform: scale(1.5);"
             />
-            <span class="freeSpace">&ensp;</span>
-            <div id="oprion1Val">adskfndafdjafdjafo</div>
+            <span id="option1Val" class="container">
+              oandeysudhan oandeysudhan oandeysudhan oandey
+            </span>
           </div>
         </div>
         <div class="row justify-content-end" style="width: 75vw;">
@@ -361,7 +367,7 @@
     <script src="/__/firebase/init.js"></script>
 
     <script src="js/screenNavigation.js"></script>
-    <script src="js/verfication.js"></script>
+    <script src="js/verification.js"></script>
     <script src="js/timer.js"></script>
   </body>
 </html>
